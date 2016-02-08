@@ -1,6 +1,6 @@
 <?php session_start() ?>
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
     <title>Jose's Music Store</title>
     <link href='http://fonts.googleapis.com/css?family=Arizonia' rel='stylesheet' type='text/css'>
@@ -17,7 +17,7 @@
             <label for='username'>Username: </label><input type='text' id='username' name='username' autofocus required><br>
             <label for='password'>Password: </label><input type='password' id='password' name='password' required><br>
             <input type='submit' value='Login' name='login'>
-            <input type="submit" value="Register" name="register">
+            <p><a href="new_user.php" id="register">Register</a></p>
         </fieldset>
 <?php
 require 'connect.php';
@@ -44,7 +44,8 @@ if ( isset($_POST['login']) )
     else
     {
         // Error message if provided credentials are invalid
-        echo "<p style='color: red'>Password is incorrect or user does not exist.</p>";
+        echo "<p style='color: red'>Password is incorrect or user does not exist.<br>
+            If you do not have an account, please <a href='new_user.php'>Register</a></p>";
     }
 
 }
