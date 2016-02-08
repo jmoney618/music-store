@@ -37,8 +37,8 @@ if ( isset($_POST['login']) )
     if ( $check > 0 )
     {
         // Register user and pass to Session variables and redirect to file personal.php
-        $_SESSION["user"]["name"] = $user;
-        $_SESSION["user"]["pwd"] = $pass;
+        $_SESSION["name"] = $user;
+        $_SESSION["pwd"] = $pass;
         echo "<script>window.location.assign('personal.php')</script>";
     }
     else
@@ -49,11 +49,8 @@ if ( isset($_POST['login']) )
     }
 
 }
-else if ( isset($_POST['register']) )
-{
-    echo "<script>window.location.assign('new_user.php')</script>";
-}
 
+mysqli_close($con);
 ?>
     </form>
 </div>

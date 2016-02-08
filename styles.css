@@ -70,7 +70,7 @@ fieldset {
     border: none;
     padding: 50px;
 }
-input[name="username"], input[name="password"] {
+input[name="username"], input[name="password"], input[name="fname"], input[name="lname"], input[name="artist"] {
     position: relative;
     float: right;
     right: 60px;
