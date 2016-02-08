@@ -110,7 +110,7 @@ input[type="checkbox"] {
     width: 50%;
     margin: 50px auto;
 }
-#register {
+#register, #logout {
     float: right;
     color: #000000;
     padding: 5px;

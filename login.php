@@ -37,7 +37,7 @@ if ( isset($_POST['login']) )
     if ( $check > 0 )
     {
         // Register user and pass to Session variables and redirect to file personal.php
-        $_SESSION["name"] = $user;
+        $_SESSION["user"] = $user;
         $_SESSION["pwd"] = $pass;
         echo "<script>window.location.assign('personal.php')</script>";
     }
@@ -45,7 +45,7 @@ if ( isset($_POST['login']) )
     {
         // Error message if provided credentials are invalid
         echo "<p style='color: red'>Password is incorrect or user does not exist.<br>
-            If you do not have an account, please <a href='new_user.php'>Register</a></p>";
+            If you do not have an account, please register.</p>";
     }
 
 }

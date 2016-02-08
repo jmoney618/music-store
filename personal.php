@@ -23,7 +23,7 @@ if ( !isset($_SESSION['user']) )
     <section>
 <?php
 // get user credentials from Session variables
-$user = $_SESSION["name"];
+$user = $_SESSION['user'];
 $query_user = "SELECT * FROM sdd306_users.users WHERE username = '$user' ";
 
 // check if query can get the user info from the database
@@ -50,8 +50,10 @@ if ( $result = mysqli_query( $con, $query_artist) )
     }
 }
 
+
 mysqli_close($con);
 ?>
+        <p><a href="logout.php" id="logout">Logout</a></p>
     </section>
 </div>
 </body>

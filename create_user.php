@@ -31,6 +31,7 @@ if ( !isset( $_SESSION['user']) AND !isset( $_SESSION['pwd']) )
     </form>
 </div>
 <?php
+require "connect.php";
 if (isset( $_POST['create_account']) )
 {
     // move user info from Session variables into variable for MySQL query
