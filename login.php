@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,11 +12,11 @@
         <?php include("menu.php") ?>
     </header>
 
-    <form action='access.php' method='POST'>
+    <form action='<?php echo htmlentities('check_login.php'); ?>' method='POST'>
         <fieldset>
             <label for='username'>Username: </label><input type='text' id='username' name='username' autofocus required><br>
             <label for='password'>Password: </label><input type='password' id='password' name='password' required><br>
-            <input type='submit' value='Submit'>
+            <input type='submit' value='Log In'>
         </fieldset>
     </form>
 </div>
