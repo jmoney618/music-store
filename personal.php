@@ -2,6 +2,7 @@
 session_start();
 require "connect.php";
 
+// if user has not logged in, redirect them to the login page
 if ( !isset($_SESSION['user']) )
 {
     header('location: login.php');
