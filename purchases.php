@@ -95,7 +95,7 @@ else
         ?>
 
         <!--submit button to clear cart-->
-        <form action="clearinformation.php">
+        <form action="clear_information.php">
             <input type="submit" name="clear" value="Clear cart" id="but_clear" />
         </form>
     </section>
