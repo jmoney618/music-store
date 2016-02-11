@@ -2,21 +2,19 @@
 session_start();
 
 // if user has not made any selections, redirect to selections page
-if ( !isset($_POST['submit']) )
+if ( !isset($_POST['purchase']) )
 {
     echo "<script>window.location.assign('selection.php')</script>";
 }
 
 // create variable to store products sent from form
-if ( isset($_POST['submit']) )
+if ( isset($_POST['purchase']) )
 {
     $purchases = $_POST['item'];
 
     // assign purchases to cart
     $_SESSION['cart'] = $purchases;
 }
-else
-
 
 ?>
 

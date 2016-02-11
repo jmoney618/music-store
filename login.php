@@ -1,6 +1,6 @@
 <?php session_start() ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<html>
 <head>
     <title>Jose's Music Store</title>
     <link href='http://fonts.googleapis.com/css?family=Arizonia' rel='stylesheet' type='text/css'>
