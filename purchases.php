@@ -1,19 +1,23 @@
 <?php
 session_start();
+require "connect.php";
 
 // if user has not made any selections, redirect to selections page
-if ( !isset($_POST['purchase']) )
+if ( !isset($_POST['shipping']) AND !isset($_SESSION['cart']) )
 {
     echo "<script>window.location.assign('selection.php')</script>";
 }
 
-// create variable to store products sent from form
-if ( isset($_POST['purchase']) )
+if ( isset($_POST['shipping']) )
 {
-    $purchases = $_POST['item'];
+    $street = $_POST['street'];
+    $city = $_POST['city'];
+    $state = $_POST['state'];
+    $zip = $_POST['zip'];
+    $_SESSION['shipping'] = [ $street, $city, $state, $zip];
 
-    // assign purchases to cart
-    $_SESSION['cart'] = $purchases;
+    // create INSERT query
+    $qry_insert = "INSERT INTO 'shipping_address' (username, street, city, state, zip) VALUES ($username, $street, $city, $state, $zip)";
 }
 
 ?>
@@ -33,7 +37,7 @@ if ( isset($_POST['purchase']) )
 
     <section>
         <?php
-
+print_r($_SESSION['shipping']);
         // variables to track album price,total price, and names for all albums
         $price = 0;
         $total = 0;
