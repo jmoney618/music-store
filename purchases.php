@@ -17,7 +17,7 @@ if ( isset($_POST['shipping']) )
     $_SESSION['shipping'] = [ $street, $city, $state, $zip];
 
     // create INSERT query
-    $qry_insert = "INSERT INTO 'shipping_address' (username, street, city, state, zip) VALUES ($username, $street, $city, $state, $zip)";
+    $qry_insert = "INSERT INTO 'shipping_address' (username, street, city, state, zip) VALUES ('$username', '$street', '$city', '$state', '$zip')";
 }
 
 ?>
