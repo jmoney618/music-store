@@ -11,7 +11,7 @@
         <?php include("menu.php") ?>
     </header>
 
-    <form action="shipping.php" method="Post" style="width: 720px">
+    <form action="cart.php" method="Post" style="width: 720px">
         <img src="images/sia.jpg" />
         <input type="checkbox" name="item[]" value="sia" />
 

@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 require "connect.php";
 
@@ -6,6 +7,10 @@ require "connect.php";
 if ( !isset($_SESSION['user']) )
 {
     header('location: login.php');
+}
+else if ( isset($_SESSION['user']) AND isset($_SESSION['cart']) )
+{
+    header('location: shipping.php');
 }
 ?>
 <!DOCTYPE html>
