@@ -1,23 +1,3 @@
-<?php
-session_start();
-require "connect.php";
-
-// if user has not made any selections, redirect to selections page
-if ( !isset($_POST['purchase']) )
-{
-    echo "<script>window.location.assign('selection.php')</script>";
-}
-
-// create variable to store products sent from form
-if ( isset($_POST['purchase']) )
-{
-    $purchases = $_POST['item'];
-
-    // assign purchases to cart
-    $_SESSION['cart'] = $purchases;
-}
-
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,7 +11,7 @@ if ( isset($_POST['purchase']) )
         <?php include("menu.php") ?>
     </header>
 
-    <form action='purchases.php' method='POST'>
+    <form action='add_ship.php' method='POST'>
         <fieldset>
             <p><label for="Address">Please enter shipping address:</label><br>
                 <input type="text" name="street" placeholder="Street" required><br><br>

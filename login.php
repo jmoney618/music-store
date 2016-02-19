@@ -20,6 +20,7 @@
             <p><a href="new_user.php" id="register">Register</a></p>
         </fieldset>
 <?php
+ob_start();
 require 'connect.php';
 
 // validate the user has an account and logged in successfully
@@ -39,7 +40,14 @@ if ( isset($_POST['login']) )
         // Register user and pass to Session variables and redirect to file personal.php
         $_SESSION["user"] = $user;
         $_SESSION["pwd"] = $pass;
-        echo "<script>window.location.assign('personal.php')</script>";
+
+        if ( isset($_SESSION['checkout']) )
+        {
+            header('shipping.php');
+            ob_flush();
+        }
+        header('personal.php');
+        ob_flush();
     }
     else
     {

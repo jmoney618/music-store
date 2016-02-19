@@ -7,10 +7,12 @@ require "connect.php";
 if ( !isset($_SESSION['user']) )
 {
     header('location: login.php');
+    ob_flush();
 }
 else if ( isset($_SESSION['user']) AND isset($_SESSION['cart']) )
 {
     header('location: shipping.php');
+    ob_flush();
 }
 ?>
 <!DOCTYPE html>
