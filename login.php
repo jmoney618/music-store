@@ -12,7 +12,7 @@
         <?php include("menu.php") ?>
     </header>
 
-    <form action='<?php echo htmlentities($_SERVER['PHP_SELF']); ?>' method='POST'>
+    <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method='POST'>
         <fieldset>
             <label for='username'>Username: </label><input type='text' id='username' name='username' autofocus required><br>
             <label for='password'>Password: </label><input type='password' id='password' name='password' required><br>
@@ -20,7 +20,7 @@
             <p><a href="new_user.php" id="register">Register</a></p>
         </fieldset>
 <?php
-ob_start();
+
 require 'connect.php';
 
 // validate the user has an account and logged in successfully
@@ -43,11 +43,18 @@ if ( isset($_POST['login']) )
 
         if ( isset($_SESSION['checkout']) )
         {
-            header('shipping.php');
+            ob_start();
+            header('location: shipping.php');
             ob_flush();
+            // echo "<script>window.location.assign('shipping.php')</script>";
         }
-        header('personal.php');
-        ob_flush();
+        else
+        {
+            ob_start();
+            header('location: personal.php');
+            ob_flush();
+            // echo "<script>window.location.assign('personal.php')</script>";
+        }
     }
     else
     {

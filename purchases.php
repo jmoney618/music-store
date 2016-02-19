@@ -1,23 +1,10 @@
 <?php
 session_start();
-require "connect.php";
 
 // if user has not made any selections, redirect to selections page
 if ( !isset($_POST['shipping']) AND !isset($_SESSION['cart']) )
 {
     echo "<script>window.location.assign('selection.php')</script>";
-}
-
-if ( isset($_POST['shipping']) )
-{
-    $street = $_POST['street'];
-    $city = $_POST['city'];
-    $state = $_POST['state'];
-    $zip = $_POST['zip'];
-    $_SESSION['shipping'] = [ $street, $city, $state, $zip];
-
-    // create INSERT query
-    $qry_insert = "INSERT INTO sdd306_users.shipping_address (username, street, city, state, zip) VALUES ('$username', '$street', '$city', '$state', '$zip')";
 }
 
 ?>
@@ -37,7 +24,7 @@ if ( isset($_POST['shipping']) )
 
     <section>
         <?php
-print_r($_SESSION['shipping']);
+
         // variables to track album price,total price, and names for all albums
         $price = 0;
         $total = 0;

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +12,7 @@
         <?php include("menu.php") ?>
     </header>
 
-    <form action='add_ship.php' method='POST'>
+    <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method='POST'>
         <fieldset>
             <p><label for="Address">Please enter shipping address:</label><br>
                 <input type="text" name="street" placeholder="Street" required><br><br>
@@ -77,3 +78,27 @@
 </div>
 </body>
 </html>
+<?php
+include "connect.php";
+
+if ( isset( $_POST['shipping']) )
+{
+    $username = $_SESSION['user'];
+    $street = $_POST['street'];
+    $city = $_POST['city'];
+    $state = $_POST['state'];
+    $zip = $_POST['zip'];
+    $_SESSION['shipping'] = [$street, $city, $state, $zip];
+
+    // create INSERT query
+    $qry_insert = "INSERT INTO `shipping_address` (username, street, city, state, zip) VALUES ('$username', '$street', '$city', '$state', $zip)";
+
+    if ( mysqli_connect($con, $qry_insert) )
+    {
+        echo "<script>window.location.assign('purchases.php')</script>";
+    }
+
+}
+
+mysqli_close($con);
+?>

@@ -1,6 +1,5 @@
 <?php
 session_start();
-require "connect.php";
 
 // if user has not made any selections, redirect to selections page
 if ( !isset($_SESSION['cart']) )
