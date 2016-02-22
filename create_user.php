@@ -17,7 +17,7 @@ if ( !isset( $_SESSION['user']) AND !isset( $_SESSION['pwd']) )
 <body>
 <div class="container">
     <header>
-        <?php include("menu.php") ?>
+        <?php include("menu.inc.php") ?>
     </header>
 
     <p>Enter the information below to complete your account</p>

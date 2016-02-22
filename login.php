@@ -9,7 +9,7 @@
 <body>
 <div class="container">
     <header>
-        <?php include("menu.php") ?>
+        <?php include("menu.inc.php") ?>
     </header>
 
     <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method='POST'>
@@ -38,22 +38,20 @@ if ( isset($_POST['login']) )
     if ( $check > 0 )
     {
         // Register user and pass to Session variables and redirect to file personal.php
-        $_SESSION["user"] = $user;
-        $_SESSION["pwd"] = $pass;
+        $_SESSION['user'] = $user;
+        $_SESSION['pwd'] = $pass;
 
         if ( isset($_SESSION['checkout']) )
         {
             ob_start();
             header('location: shipping.php');
             ob_flush();
-            // echo "<script>window.location.assign('shipping.php')</script>";
         }
         else
         {
             ob_start();
             header('location: personal.php');
             ob_flush();
-            // echo "<script>window.location.assign('personal.php')</script>";
         }
     }
     else

@@ -8,7 +8,7 @@
 <body>
 <div class="container">
     <header>
-        <?php include("menu.php") ?>
+        <?php include("menu.inc.php") ?>
     </header>
 
     <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data" id="uploads">

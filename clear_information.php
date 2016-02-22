@@ -15,7 +15,7 @@ session_destroy();
 <body>
 <div class="container">
     <header>
-        <?php include("menu.php") ?>
+        <?php include("menu.inc.php") ?>
     </header>
 
     <section>

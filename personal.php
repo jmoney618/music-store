@@ -25,7 +25,7 @@ else if ( isset($_SESSION['user']) AND isset($_SESSION['cart']) )
 <body>
 <div class="container">
     <header>
-        <?php include("menu.php") ?>
+        <?php include("menu.inc.php") ?>
     </header>
 
     <section>

@@ -9,7 +9,7 @@
 <body>
 <div class="container">
     <header>
-        <?php include("menu.php") ?>
+        <?php include("menu.inc.php") ?>
     </header>
 
     <p>Enter the information below to create your account</p>

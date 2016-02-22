@@ -8,7 +8,7 @@
 <body>
 <div class="container">
     <header>
-        <?php include("menu.php") ?>
+        <?php include("menu.inc.php") ?>
     </header>
     <div id="contact">
         By phone: <p id="phone">(302) 555-5555</p>
