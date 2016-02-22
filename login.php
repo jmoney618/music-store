@@ -31,7 +31,7 @@ if ( isset($_POST['login']) )
     $pass = $_POST['password'];
 
     // MySQL query to test if used has an account in the database
-    $query = "SELECT user_id FROM sdd306_users.users WHERE username = '$user' AND password = '$pass' ";
+    $query = "SELECT user_id FROM users WHERE username = '$user' AND password = '$pass' ";
     $result = mysqli_query( $con, $query );
     $check = mysqli_num_rows( $result );
 

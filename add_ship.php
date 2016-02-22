@@ -17,7 +17,7 @@ if ( isset( $_POST['shipping']) )
     echo "<br>";
 
     // create INSERT query
-    $qry_insert = "INSERT INTO sdd306_users.shipping_address (username, street, city, state, zip) VALUES ('$username', '$street', '$city', '$state', '$zip')";
+    $qry_insert = "INSERT INTO shipping_address (username, street, city, state, zip) VALUES ('$username', '$street', '$city', '$state', '$zip')";
     // insert information into the database
     if ( mysqli_query( $con, $qry_insert ) )
     {
