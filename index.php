@@ -8,7 +8,7 @@
 <body>
 	<div class="container">
 		<header>
-			<?php include("menu.inc.php") ?>
+			<?php include('menu.inc.php') ?>
 		</header>
 
         <section>

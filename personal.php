@@ -25,14 +25,14 @@ else if ( isset($_SESSION['user']) AND isset($_SESSION['cart']) )
 <body>
 <div class="container">
     <header>
-        <?php include("menu.inc.php") ?>
+        <?php include('menu.inc.php') ?>
     </header>
 
     <section>
 <?php
 // get user credentials from Session variables
 $user = $_SESSION['user'];
-$query_user = "SELECT * FROM sdd306_users.users WHERE username = '$user' ";
+$query_user = "SELECT * FROM users WHERE username = '$user' ";
 
 // check if query can get the user info from the database
 if ( $result = mysqli_query( $con, $query_user ) )

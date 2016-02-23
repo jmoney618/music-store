@@ -1,4 +1,5 @@
 <?php
+@session_start();
 
 // variables to track album price,total price, and names for all albums
 $price = 0;

@@ -9,7 +9,7 @@
 <body>
 <div class="container">
     <header>
-        <?php include("menu.inc.php") ?>
+        <?php include('menu.inc.php') ?>
     </header>
 
     <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method='POST'>
