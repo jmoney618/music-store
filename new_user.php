@@ -27,6 +27,12 @@ if ( isset($_POST['create_account']) )
     $user = $_POST['username'];
     $pwd = $_POST['password'];
 
+    // protect against SQL injection
+    $user = stripslashes($user);
+    $user = mysqli_real_escape_string($con, $user);
+    $pwd = stripslashes($pwd);
+    $pwd = mysqli_real_escape_string($con, $pwd);
+
     // check if username already exists in the table
     $query = "SELECT * FROM sdd306_users.users WHERE username = '$user' ";
     $result = mysqli_query( $con, $query );

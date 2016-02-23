@@ -12,9 +12,22 @@ if ( isset( $_POST['shipping']) )
     $zip = $_POST['zip'];
     $_SESSION['shipping'] = [$street, $city, $state, $zip];
 
-    echo "$username <br>";
-    print_r($_SESSION['shipping']);
-    echo "<br>";
+    // protect against SQL injection
+    $username = stripslashes($username);
+    $username = mysqli_real_escape_string($con, $username);
+
+    $street = stripslashes($street);
+    $street = mysqli_real_escape_string($con, $street);
+
+    $city = stripslashes($city);
+    $city = mysqli_real_escape_string($con, $city);
+
+    $state = stripslashes($state);
+    $state = mysqli_real_escape_string($con, $state);
+
+    $zip = stripslashes($zip);
+    $zip = mysqli_real_escape_string($con, $zip);
+
 
     // create INSERT query
     $qry_insert = "INSERT INTO shipping_address (username, street, city, state, zip) VALUES ('$username', '$street', '$city', '$state', '$zip')";

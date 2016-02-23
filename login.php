@@ -30,6 +30,12 @@ if ( isset($_POST['login']) )
     $user = $_POST['username'];
     $pass = $_POST['password'];
 
+    // protect against SQL injection
+    $user = stripslashes($user);
+    $user = mysqli_real_escape_string($con, $user);
+    $pass = stripslashes($pass);
+    $pass = mysqli_real_escape_string($con, $pass);
+
     // MySQL query to test if used has an account in the database
     $query = "SELECT user_id FROM users WHERE username = '$user' AND password = '$pass' ";
     $result = mysqli_query( $con, $query );
