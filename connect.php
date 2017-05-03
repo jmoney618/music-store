@@ -2,7 +2,7 @@
 // declare variables and open connection to database
 $servername = 'localhost';
 $user = 'root';
-$pwd = 'Ykyu%3fJj$5z';
+$pwd = '';
 $db = 'sdd306_users';
 
 $con = mysqli_connect($servername, $user, $pwd, $db);
