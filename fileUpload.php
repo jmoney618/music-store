@@ -1,7 +1,7 @@
 <?php
 
 // directory where files will be uploaded to
-$updir = "uploads/";
+@$updir = "uploads/";
 // file destination name
 @$dest = $updir.basename($_FILES["photoUpload"]["name"]);
 
@@ -30,4 +30,4 @@ if ( isset( $_POST['submit']) ) {
     } else {
         echo "<p style='margin: auto'>Photo moved successfully</p>";
     }
-}
+};

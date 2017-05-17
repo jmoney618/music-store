@@ -1,9 +1,6 @@
 <?php
 // declare variables and open connection to database
-$servername = 'localhost';
-$user = 'root';
-$pwd = 'Ykyu%3fJj$5z';
-$db = 'sdd306_users';
+include '../../../external_includes/wpbd.php';
 
 $con = mysqli_connect($servername, $user, $pwd, $db);
 

@@ -36,7 +36,7 @@ if ( isset($_POST['login']) )
     $pass = stripslashes($pass);
     $pass = mysqli_real_escape_string($con, $pass);
 
-    // MySQL query to test if used has an account in the database
+    // MySQL query to test if user has an account in the database
     $query = "SELECT user_id FROM users WHERE username = '$user' AND password = '$pass' ";
     $result = mysqli_query( $con, $query );
     $check = mysqli_num_rows( $result );
