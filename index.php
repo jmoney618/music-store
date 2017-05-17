@@ -9,11 +9,11 @@
     <div class="container">
         <header>
 	    <?php include('menu.inc.php') ?>
-	    <a href="index.html"><h2><span id="logo">Jose's</span><br>&nbsp;<span id="store">Music Store</span></h2></a>
+	    <a href="index.php"><h2><span id="logo">Jose's</span><br>&nbsp;<span id="store">Music Store</span></h2></a>
 
 	    <nav>
 	        <ul>
-		    <li><a href="index.html">Home |</a></li>
+		    <li><a href="index.php">Home |</a></li>
 		    <li><a href="selection.html">Select Albums |</a></li>
 		    <li><a href="photos.html">View my Artists |</a></li>
 		    <li><a href="contact.html">Contact Us |</a></li>
